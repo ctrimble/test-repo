@@ -1,0 +1,19 @@
+#!/bin/bash
+
+if [[ -n $(git status -s --porcelain) ]]
+then
+  echo "Changes not pushed to preview, you have working changes in your working copy."
+  exit 1
+fi
+
+# The tag name is preview-DATETIME.  This is not in a standard ISO format
+# due to tag name restrictions.
+TAG="preview-$(date -u +"%Y%m%d%H%M%SZ")"
+git push origin $TAG
+
+# Move the tag to preview
+git push --force origin $TAG:preview
+
+echo "The tag $TAG has been pushed to preview."
+
+exit 0;
