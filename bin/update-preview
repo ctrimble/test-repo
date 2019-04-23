@@ -11,8 +11,8 @@ fi
 BRANCH=$(git rev-parse --abbrev-ref HEAD) 
 SHA1=$(git rev-parse HEAD)
 TAG="preview-$(date -u +"%Y%m%d%H%M%SZ")"
-git tag $TAG || { echo "Could not create tag $tag"; exit 1; }
-git push origin $TAG || { echo "Cound not push tag $tag to origin"; exit 1; }
+git tag --quiet $TAG || { echo "Could not create tag $tag"; exit 1; }
+git push --quiet origin $TAG || { echo "Cound not push tag $tag to origin"; exit 1; }
 
 # Move the tag to preview
 git push --quiet --force origin $TAG:preview || { echo "Could not push tag $tag to origin/preview"; exit 1; }
