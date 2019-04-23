@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "update-preview": "./bin/update-preview"
+    "update-preview": "$PWD/bin/update-preview"
   },
   "author": "",
   "license": "UNLICENSED"
