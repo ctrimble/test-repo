@@ -8,8 +8,8 @@ fi
 
 # The tag name is preview-DATETIME.  This is not in a standard ISO format
 # due to tag name restrictions.
-BRANCH=git rev-parse --abbrev-ref HEAD 
-SHA1=git rev-parse HEAD
+BRANCH=$(git rev-parse --abbrev-ref HEAD) 
+SHA1=$(git rev-parse HEAD)
 TAG="preview-$(date -u +"%Y%m%d%H%M%SZ")"
 git tag $TAG || { echo "Could not create tag $tag"; exit 1; }
 git push origin $TAG || { echo "Cound not push tag $tag to origin"; exit 1; }
