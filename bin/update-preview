@@ -19,7 +19,7 @@ git push --quiet --force origin $TAG:preview || { echo "Could not push tag $tag 
 
 RESULT="
 Preview successfully updated.
-  branch: $BRANCH
+  source branch: $BRANCH
   SHA1: $SHA1
   tag: $TAG
 "
