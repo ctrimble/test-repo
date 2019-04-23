@@ -23,6 +23,6 @@ Preview successfully updated.
   SHA1: $SHA1
   tag: $TAG
 "
-echo $RESULT
+echo "$RESULT"
 
 exit 0;
