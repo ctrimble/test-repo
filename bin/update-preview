@@ -9,6 +9,7 @@ fi
 # The tag name is preview-DATETIME.  This is not in a standard ISO format
 # due to tag name restrictions.
 TAG="preview-$(date -u +"%Y%m%d%H%M%SZ")"
+git tag $TAG
 git push origin $TAG
 
 # Move the tag to preview
